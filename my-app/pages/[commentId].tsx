@@ -37,7 +37,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context
-  const { commentId } = params
+  const { commentId } = params as { commentId: string };
 
   const comment = datadb.find((comment) => comment.id === parseInt(commentId))
   return {

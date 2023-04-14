@@ -2,14 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { datadb } from '../../database/db_test'
 
-type Data = {
-  datadb: {
-    id: number;
-    title: string;
-  }
-}[]
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     if (req.method === 'GET') {
       res.status(200).json(datadb)

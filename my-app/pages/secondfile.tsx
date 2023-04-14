@@ -2,20 +2,23 @@ import ThirdFile from './thirdfile'
 
 type ExternalProps = {
   data: {
-    id: string,
+    id: number
     title: string
-  },
-}[]
+  }[]
+}
 
-export default function SecondFile({data}: ExternalProps) {
+export default function SecondFile({ data }: ExternalProps) {
   return (
     <>
       <div>
-        {data.slice(0, 10).map((d) => (
-          <p key={d.id}>{d.title}</p>
-          ))
-        }
-        <ThirdFile />
+        <h2 style={{marginBottom: "10px", color: "orangered"}}>External API (typicode)</h2>
+        <div>
+          {data.slice(0, 10).map((d) => (
+            <p key={d.id}>{d.title}</p>
+            ))
+          }
+        </div>
+        <ThirdFile data={data} id={0} title={''} />
       </div>
     </>
   )

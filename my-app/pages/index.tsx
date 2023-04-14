@@ -1,23 +1,23 @@
-import {GetStaticProps} from 'next'
-import SecondFile from './secondfile'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import SecondFile from './secondfile'
 
 type DataProps = {
   data: {
-    id: number;
-    title: string;
-  }
+    id: number,
+    title: string
+  }[]
 }
 
-export default function Home({data}: DataProps[]) {
+export default function Home({ data }: DataProps) {
   return (
     <>
       <Head>
-        <title>My page title</title>
+        <title>NextJS Routing</title>
       </Head>
 
       <main className="m-10 flex-col space-y-2">
-        <h1>Main title</h1>
+        <h1>NextJS Routing</h1>
         
         <SecondFile data={data} />
           
@@ -26,6 +26,7 @@ export default function Home({data}: DataProps[]) {
   )
 }
 
+//server component
 export const getStaticProps: GetStaticProps = async (context) => {
   const res = await fetch("https:jsonplaceholder.typicode.com/todos/");
   const data = await res.json();

@@ -7,7 +7,7 @@ type CommentProps = {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { commentId } = req.query
+  const { commentId } = req.query as { commentId: string };
   if (req.method === 'GET') {
     const comment = datadb.find((comment: CommentProps) => {
       return comment?.id === parseInt(commentId)

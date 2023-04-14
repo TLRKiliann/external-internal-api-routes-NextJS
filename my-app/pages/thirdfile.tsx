@@ -2,15 +2,14 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 type InternalProps = {
-  datadb: {
-    id: number;
-    title: string;
-  }
+  data: object,
+  id: number
+  title: string
 }
 
-function ThirdFile() {
+function ThirdFile({data}: InternalProps) {
   
-  const [convData, setConvData] = useState<InternalProps[]>([])
+  const [convertData, setConvertData] = useState<InternalProps[]>([])
   const [color, setColor] = useState<boolean>(false)
   const [comment, setComment] = useState<string>("")
   
@@ -18,7 +17,7 @@ function ThirdFile() {
   const getDataApi = async () => {
     const res = await fetch('/api/handlerdata')
     const data = await res.json()
-    setConvData(data)
+    setConvertData(data)
     setColor(true)
   }
   //Post method
@@ -46,13 +45,13 @@ function ThirdFile() {
   return (
     <>
       <div>
-        <h1>Lastcomponent</h1>
+        <h2 style={{margin: "10px 0px", color: "orangered"}}>Internal API (/api/handlerdata)</h2>
         <div>
         {color === true ? (
           <div className="visible mt-2 mb-3 p-1 w-40 text-center 
             text-green-400 bg-slate-800 border">
             
-            {convData.map((d) => (
+            {convertData.map((d) => (
               <div key={d.id}>
 
                 <Link href={`/${d.id}`}>{d.title}</Link>
