@@ -1,9 +1,9 @@
-type DbProps = {
+type DataProps = {
   id: number;
   title: string;
-}
+}[]
 
-export const datadb: DbProps[] = [
+export const datadb: DataProps = [
   {
     "id": 1,
     "title": "kill API",
