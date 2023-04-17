@@ -3,7 +3,9 @@
 ## Install
 
 └─ $ ▶ pnpm install
+
 └─ $ ▶ pnpm run dev
+
 └─ $ ▶ pnpm run build
 
 ## external API with typicode
@@ -69,6 +71,7 @@ You should use getStaticPaths if you’re statically pre-rendering pages that us
 
 └─ $ ▶ pnpm run build
 
+```
 Route (pages)                              Size     First Load JS
 ┌ ● / (ISR: 10 Seconds) (517 ms)           1.08 kB        76.6 kB
 ├   /_app                                  0 B            73.4 kB
@@ -94,6 +97,6 @@ Route (pages)                              Size     First Load JS
 ●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
    (ISR)     incremental static regeneration (uses revalidate in getStaticProps)
 
-
+```
 
 Enjoy it ! :koala:
