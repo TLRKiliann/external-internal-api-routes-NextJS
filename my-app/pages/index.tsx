@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import SecondFile from './secondfile'
+import SecondFile from '../components/SecondFile'
 
 type DataProps = {
   data: {
