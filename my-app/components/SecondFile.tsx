@@ -1,4 +1,4 @@
-import ThirdFile from './thirdfile'
+import ThirdFile from '../pages/thirdfile'
 
 type ExternalProps = {
   data: {
@@ -11,7 +11,9 @@ export default function SecondFile({ data }: ExternalProps) {
   return (
     <>
       <div>
-        <h2 style={{marginBottom: "10px", color: "orangered"}}>External API (typicode)</h2>
+        <h2 style={{marginBottom: "10px", color: "orangered"}}>
+        	External API (typicode)
+        </h2>
         <div>
           {data.slice(0, 10).map((d) => (
             <p key={d.id}>{d.title}</p>
