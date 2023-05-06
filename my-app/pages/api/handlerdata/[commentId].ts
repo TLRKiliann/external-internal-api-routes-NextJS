@@ -21,7 +21,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       (comment) => comment.id === parseInt(commentId)
     )
     datadb.splice(index, 1)
-
     res.status(200).json(deleteComment)
   }
 }

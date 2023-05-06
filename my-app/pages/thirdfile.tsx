@@ -32,6 +32,7 @@ function ThirdFile({data}: InternalProps) {
     const data = await res.json()
     console.log(data)
   }
+
   //Delete comment
   const handleDelete = async (commentId: number) => {
     const res = await fetch(`/api/handlerdata/${commentId}`, {
